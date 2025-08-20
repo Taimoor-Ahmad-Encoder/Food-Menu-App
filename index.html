@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food-Menu-App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <span class="image-span">
+            <img src="./images/chef.jfif" alt="" /> </span
+          ><span>TD</span> Restaurant
+          <p class="brand-description">
+            Welcome to
+            <span style="color: peru; font-size: 1.2em; font-weight: bold"
+              >Td</span
+            >
+            <span style="font-size: 1.2em; font-weight: bold">restuarent</span>
+            Where Every Bite Feels Like Home.
+            <br />
+            Serving Happiness on Every Plate.
+          </p>
+        </div>
+
+        <!-- Navbar second row -->
+        <div class="navbar">
+          <button class="add-food-btn">+ Add Food</button>
+
+          <div class="search-bar">
+            <input
+              type="text"
+              placeholder="Search food..."
+              class="search-input"
+            />
+          </div>
+        </div>
+      </header>
+
+      <div class="cards-container">
+        <div class="card">
+          <img src="./images/CeaserSalad.jfif" alt="Pizza" />
+          <div class="card-body">
+            <h3>Ceaser Salad</h3>
+            <span class="price">$12</span>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <button class="delete-btn">Delete</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./images/Cheaseburger.jfif" alt="Burger" />
+          <div class="card-body">
+            <h3>Cheaseburger</h3>
+            <span class="price">$8</span>
+            <p>Crisp lettuce with creamy Caesar dressing.</p>
+            <button class="delete-btn">Delete</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./images/Chocolate brownie.jfif" alt="Pasta" />
+          <div class="card-body">
+            <h3>Chocolate Brownie</h3>
+            <span class="price">$10</span>
+            <p>Rich, fudgy chocolate square dessert.</p>
+            <button class="delete-btn">Delete</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./images/FreshJuice.jfif" alt="Pasta" />
+          <div class="card-body">
+            <h3>Fresh Fruit Juice</h3>
+            <span class="price">$10</span>
+            <p>Refreshing mix of seasonal fruits.</p>
+            <button class="delete-btn">Delete</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./images/Grilled salmon.jpg" alt="Pasta" />
+          <div class="card-body">
+            <h3>Grilled Salmon</h3>
+            <span class="price">$10</span>
+            <p>Tender salmon fillet with lemon butter.</p>
+            <button class="delete-btn">Delete</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./images/margherita pizza.jpg" alt="Pasta" />
+          <div class="card-body">
+            <h3>Margherita Pizza</h3>
+            <span class="price">$10</span>
+            <p>Classic pizza with fresh mozzarella.</p>
+            <button class="delete-btn">Delete</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./images/Mushroom soup.jfif" alt="Pasta" />
+          <div class="card-body">
+            <h3>Mushroom Soup</h3>
+            <span class="price">$10</span>
+            <p>Creamy soup with earthy mushrooms.</p>
+            <button class="delete-btn">Delete</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./images/spagheti carbonera.jfif" alt="Pasta" />
+          <div class="card-body">
+            <h3>Spagheti Carbonera</h3>
+            <span class="price">$10</span>
+            <p>Pasta with eggs, cheese, and bacon.</p>
+            <button class="delete-btn">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup-overlay">
+      <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h2 id="popup-title">Add Food</h2>
+        <form id="popup-form">
+          <input
+            type="text"
+            placeholder="Food Name"
+            required
+            class="foodName"
+          />
+          <input type="number" placeholder="Price" required class="foodPrice" />
+          <input
+            type="text"
+            placeholder="Description"
+            required
+            class="foodDescription"
+          />
+          <input
+            type="text"
+            placeholder="Food Image URL"
+            required
+            class="FoodURL"
+          />
+          <button type="submit" class="confirm">Confirm</button>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

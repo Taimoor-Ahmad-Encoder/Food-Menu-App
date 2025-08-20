@@ -1,0 +1,84 @@
+const addFoodBtn = document.querySelector(".add-food-btn");
+const popupOverlay = document.querySelector(".popup-overlay");
+const submit = document.querySelector(".confirm");
+const cardsContainer = document.querySelector(".cards-container");
+const deletBtn = document.querySelectorAll(".delete-btn");
+const cards = document.querySelectorAll(".card");
+
+addFoodBtn.addEventListener("click", () => {
+  popupOverlay.style.display = "flex";
+});
+
+const addNewFoodItem = () => {
+  const newCard = document.createElement("div");
+  const newFoodName = document.querySelector(".foodName").value;
+  const newFoodPrice = document.querySelector(".foodPrice").value;
+  const newFoodDescription = document.querySelector(".foodDescription").value;
+  const newFoodURL = document.querySelector(".FoodURL").value;
+
+  newCard.classList.add("card");
+  newCard.innerHTML = `<img src="${newFoodURL}" alt="${newFoodName}" />
+          <div class="card-body">
+            <h3>${newFoodName}</h3>
+            <span class="price">${newFoodPrice}</span>
+            <p>${newFoodDescription}</p>
+            <button class="delete-btn">Delete</button>`;
+
+  cardsContainer.appendChild(newCard);
+
+  // deleteFoodItem(newCard);
+
+  popupOverlay.style.display = "none";
+  document.querySelector("#popup-form").reset();
+};
+submit.addEventListener("click", (event) => {
+  event.preventDefault();
+  addNewFoodItem();
+});
+
+// DELETE using event delegation
+cardsContainer.addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete-btn")) {
+    const card = e.target.closest(".card");
+    if (card) {
+      const confirmDelete = confirm(
+        "Are you sure you want to delete this food item?"
+      );
+      if (confirmDelete) {
+        card.remove();
+      }
+    }
+  }
+});
+
+const searchInput = document.querySelector(".search-input");
+
+searchInput.addEventListener("input", () => {
+  const searchValue = searchInput.value.toLowerCase();
+
+  cards.forEach((card) => {
+    let foodName = document.querySelector("h3").textContent.toLowerCase();
+    let foodDescription = document.querySelector("p").textContent.toLowerCase();
+
+    if (foodName === searchValue || foodDescription === searchValue) {
+      cards.style.display = "block";
+    } else {
+      cards.style.display = "none";
+    }
+  });
+});
+
+// function deletFoodItem(card) {
+//   deletBtn.forEach((btn) => {
+//     btn.addEventListener("click", () => {
+//       const confirmDelete = confirm(
+//         "Are you sure want to delete this food item"
+//       );
+//       if (confirmDelete) {
+//         card.remove();
+//       }
+//     });
+//   });
+// }
+
+// cards.forEach((card) => deletFoodItem(card));
